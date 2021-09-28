@@ -4,8 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "test": "cypress open",
+
+    "dev": "nodemon server.js"
+    
   },
   "keywords": [],
   "author": "Oliver Phillips",

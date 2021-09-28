@@ -1,0 +1,17 @@
+{
+  "name": "server-side-forms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^8.5.0"
+  },
+  "scripts": {
+    "test": "cypress open",
+    "dev": "nodemon "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
