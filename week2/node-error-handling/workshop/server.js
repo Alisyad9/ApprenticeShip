@@ -16,6 +16,6 @@ server.get("/", home.get);
 server.get("/try-catch", tryCatch.get);
 server.get("/rejection", rejection.get);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
