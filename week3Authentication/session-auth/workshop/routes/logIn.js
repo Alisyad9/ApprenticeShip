@@ -15,8 +15,21 @@ function get(request, response) {
 
 function post(request, response) {
   const { email, password } = request.body;
-  console.log("Logging in...");
-  response.redirect("/");
+
+  //access the auth.js functions
+  auth
+    .verifyUser(email, password)
+    .then(auth.saveUserSession)
+    .then((sid) => {
+      response.cookie("sid", sid, auth.COOKIE_OPTIONS);
+      response.redirect("/");
+    })
+    .catch((error) => {
+      console.error(error);
+      response.send(`<h1>User not found</h1>`);
+    });
+  // console.log("Logging in...");
+  // response.redirect("/");
 }
 
 module.exports = { get, post };

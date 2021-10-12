@@ -7,7 +7,7 @@ function createUser(email, hash, name) {
   `;
   return db
     .query(INSERT_USER, [email, hash, name])
-    .then((result) => result.rows[0]);
+    .then((result) => result.rows[0]); //getting it at index 0
 }
 
 function getUser(email) {
@@ -25,8 +25,17 @@ function getSession(sid) {
   });
 }
 
+function createSession(sessionID, data) {
+  const sessionsTable =
+    "INSERT INTO sessions (sid, data) VALUES ($1, $2) RETURNING sid, data";
+  return db
+    .query(sessionsTable, [sessionID, data])
+    .then((result) => result.rows[0].sid);
+}
+
 module.exports = {
   createUser,
   getUser,
   getSession,
+  createSession,
 };
