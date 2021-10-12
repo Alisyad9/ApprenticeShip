@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "nodemon workshop/server.js",
-    "start": "node workshop/server.js",
+    "dev": "nodemon solution/server.js",
+    "start": "node solution/server.js",
     "test:one": "node tests/one.js | tap-spec",
     "test:two": "node tests/two.js | tap-spec",
     "test:three": "node tests/three.js | tap-spec"
