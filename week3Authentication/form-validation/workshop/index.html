@@ -8,12 +8,35 @@
   </head>
   <body>
     <h1>Create an account</h1>
-    <form>
-      <label for="email">Email</label>
-      <input id="email" />
+    <form novalidate>
+      <!-- <label for="email" aria-hidden="true">Email</label>
+      <input id="email" /> -->
+      <label for="email">
+        Email
+        <span aria-hidden="true">*</span>
+      </label>
+      <input id="email" type="email" aria-describedby="emailError" required />
+      <div id="emailError" class="error"></div>
 
-      <label for="password">Password</label>
-      <input id="password" />
+      <label for="password">
+        Password
+        <span aria-hidden="true">*</span>
+      </label>
+      <div id="passwordRequirements">
+        Passwords must contain at least one letter and one number, and contain
+        at least 8 characters.
+      </div>
+      <input
+        id="password"
+        aria-describedby="passwordRequirements"
+        type="password"
+        pattern="(?=.?[0-9])(?=.?[A-Za-z]).+"
+        min="8"
+        required
+      />
+
+      <!-- <label for="password">Password</label>
+      <input id="password" /> -->
 
       <button>Sign up</button>
     </form>
