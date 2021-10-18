@@ -10,7 +10,14 @@ const path = require("path");
  */
 
 function readFilePromise(filePath) {
-  //
+  return new Promise((resolve, reject) => {
+    fs.readFile(
+      filePath,
+      (error, data) => (error ? reject(error) : resolve(data))
+
+      // do some async stuff that might error
+    );
+  });
 }
 
 /*
@@ -44,6 +51,8 @@ test("readFilePromise returns a promise", (t) => {
     result instanceof Promise,
     "readFilePromise should return a Promise object"
   );
+
+  ////
   if (result) {
     result.then((contents) => {
       t.equal(
@@ -60,6 +69,8 @@ test("readFilePromise returns a promise", (t) => {
 
 test("readFilePromise rejects if an error occurs", (t) => {
   const result = readFilePromise("notReal.psd");
+
+  /// need to look into this
   if (result) {
     result
       .then(() => {

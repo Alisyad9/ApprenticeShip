@@ -7,6 +7,13 @@
  */
 
 function wait(ms) {
+  // return new Promise((resolve) => setTimeout(resolve, ms));
+
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(resolve, ms);
+  });
+
+  return promise;
   //
 }
 
