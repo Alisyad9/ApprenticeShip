@@ -1,7 +1,7 @@
-import calculate from "./calculate.js";
+import calculate from './calculate.js';
 
-const form = document.querySelector("form");
-const output = document.querySelector("output");
+const form = document.querySelector('form');
+const output = document.querySelector('output');
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -13,8 +13,8 @@ function handleSubmit(event) {
     output.textContent = result;
   } catch (error) {
     console.error(error);
-    output.textContent = "Something went wrong";
+    output.textContent = 'Something went wrong';
   }
 }
 
-form.addEventListener("submit", handleSubmit);
+form.addEventListener('submit', handleSubmit);
