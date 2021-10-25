@@ -13,7 +13,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const root = document.getElementById("root");
+      const root = document.getElementById('root');
 
       function Title(props) {
         return <h1>{props.children}</h1>;
@@ -22,12 +22,30 @@
       function Page(props) {
         return <div className="page">{props.children}</div>;
       }
+      function name(params) {}
+
+      function Card(props) {
+        console.log(props);
+        return (
+          <div>
+            <h2>{props.title} </h2>
+            <img src={props.image} alt=" " />
+            <p>{props.children}</p>
+          </div>
+        );
+      }
 
       function App() {
         return (
           <Page>
             <Title>Hello world!</Title>
             <p>Welcome to my page</p>
+            <Card
+              title="Tasty burger"
+              image="https://source.unsplash.com/photos/f4amnWqRU70"
+            >
+              That is a good burger
+            </Card>
           </Page>
         );
       }
