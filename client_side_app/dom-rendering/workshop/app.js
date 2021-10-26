@@ -2,8 +2,6 @@ import { createEl } from './createEl.js';
 
 import dogs from './dogs.js';
 
-console.log(dogs);
-
 const container = document.getElementById('app');
 
 // const element = dogs.map((dog) => {

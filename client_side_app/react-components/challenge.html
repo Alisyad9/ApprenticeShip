@@ -9,10 +9,11 @@
     <script src="https://unpkg.com/react-dom@%5E17/umd/react-dom.development.js"></script>
     <!-- This will let us write JSX and ES6 in a script tag with a special type of "text/babel" -->
     <script src="https://unpkg.com/babel-standalone@%5E6/babel.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
     <div id="root"></div>
 
-    <script type="text/babel">
+    <script type="text/babel" type="module">
       const root = document.getElementById('root');
 
       function Title(props) {
