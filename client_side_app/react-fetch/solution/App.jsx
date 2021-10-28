@@ -2,10 +2,11 @@ import React from "react";
 import Profile from "./Profile.jsx";
 
 function App() {
-  const [name, setName] = React.useState("oliverjam");
+  const [name, setName] = React.useState("Ali");
   return (
     <main>
-      <form
+      {/* <form
+
         onSubmit={(event) => {
           event.preventDefault();
           setName(event.target.username.value);
@@ -17,8 +18,8 @@ function App() {
           placeholder="Search users"
           name="username"
         />
-      </form>
-      <Profile name={name} />
+      </form> */}
+      <Profile />
     </main>
   );
 }
